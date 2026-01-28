@@ -12,13 +12,22 @@ A CLI tool to export your ClickUp Docs and Wikis to local markdown files, preser
 
 ## Installation
 
-### Using npx (no install required)
+### Clone and run locally
 
 ```bash
-npx clickup-docs-exporter --token YOUR_TOKEN --workspace YOUR_WORKSPACE_ID
+git clone https://github.com/abderrahmaneMustapha/clickup-docs-bulk-export.git
+cd clickup-docs-bulk-export
+npm install
+npm run build
 ```
 
-### Global installation
+Then run the CLI:
+
+```bash
+node dist/cli.js --token YOUR_TOKEN --workspace YOUR_WORKSPACE_ID
+```
+
+### Global installation (from npm)
 
 ```bash
 npm install -g clickup-docs-exporter
@@ -30,7 +39,7 @@ clickup-docs-exporter --token YOUR_TOKEN --workspace YOUR_WORKSPACE_ID
 ### Export all docs from a workspace
 
 ```bash
-npx clickup-docs-exporter \
+clickup-docs-exporter \
   --token pk_12345678_ABCDEFGHIJKLMNOP \
   --workspace 1234567 \
   --output ./my-docs
@@ -39,7 +48,7 @@ npx clickup-docs-exporter \
 ### Export a single doc
 
 ```bash
-npx clickup-docs-exporter \
+clickup-docs-exporter \
   --token pk_12345678_ABCDEFGHIJKLMNOP \
   --workspace 1234567 \
   --doc abc123 \
@@ -58,10 +67,15 @@ npx clickup-docs-exporter \
 
 ## Getting Your ClickUp API Token
 
-1. Go to [ClickUp Settings](https://app.clickup.com/settings/apps)
-2. Scroll down to **API Token**
-3. Click **Generate** or copy your existing token
-4. Your token will look like: `pk_12345678_ABCDEFGHIJKLMNOP`
+1. Log in to ClickUp
+2. Click your avatar in the upper-right corner and select **Settings**
+3. In the sidebar, click **Apps**
+4. Under **API Token**, click **Generate** (or **Regenerate** if you already have one)
+5. Click **Copy** to copy your token
+
+Your token will look like: `pk_12345678_ABCDEFGHIJKLMNOP`
+
+> 📖 For more details, see the [official ClickUp Authentication documentation](https://developer.clickup.com/docs/authentication).
 
 ## Finding Your Workspace ID
 
@@ -133,6 +147,6 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 ## Links
 
-- [GitHub Repository](https://github.com/abderrahmaneMustapha/clickup-docs-exporter)
-- [Report Issues](https://github.com/abderrahmaneMustapha/clickup-docs-exporter/issues)
+- [GitHub Repository](https://github.com/abderrahmaneMustapha/clickup-docs-bulk-export)
+- [Report Issues](https://github.com/abderrahmaneMustapha/clickup-docs-bulk-export/issues)
 - [WikiBeem - Hosted Solution](https://wikibeem.com)

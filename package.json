@@ -25,14 +25,19 @@
   ],
   "author": "Toumi Abderrahmane",
   "license": "MIT",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abderrahmaneMustapha/clickup-docs-exporter.git"
+    "url": "git+https://github.com/abderrahmaneMustapha/clickup-docs-bulk-export.git"
   },
   "bugs": {
-    "url": "https://github.com/abderrahmaneMustapha/clickup-docs-exporter/issues"
+    "url": "https://github.com/abderrahmaneMustapha/clickup-docs-bulk-export/issues"
   },
-  "homepage": "https://github.com/abderrahmaneMustapha/clickup-docs-exporter#readme",
+  "homepage": "https://github.com/abderrahmaneMustapha/clickup-docs-bulk-export#readme",
   "engines": {
     "node": ">=18.0.0"
   },
