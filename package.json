@@ -1,0 +1,50 @@
+{
+  "name": "clickup-docs-exporter",
+  "version": "1.0.0",
+  "description": "Export ClickUp Docs and Wikis to markdown files with full hierarchy preservation",
+  "main": "dist/cli.js",
+  "bin": {
+    "clickup-docs-exporter": "dist/cli.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "dev": "tsx src/cli.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "clickup",
+    "export",
+    "markdown",
+    "docs",
+    "wiki",
+    "backup",
+    "documentation",
+    "cli"
+  ],
+  "author": "Toumi Abderrahmane",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abderrahmaneMustapha/clickup-docs-exporter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abderrahmaneMustapha/clickup-docs-exporter/issues"
+  },
+  "homepage": "https://github.com/abderrahmaneMustapha/clickup-docs-exporter#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "ora": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.0.0"
+  }
+}
