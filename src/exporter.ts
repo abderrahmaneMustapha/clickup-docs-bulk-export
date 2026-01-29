@@ -11,11 +11,20 @@ export class ClickUpExporter {
   private options: ExportOptions
   private exportedPages: number = 0
   private errors: string[] = []
+  private pageDelay: number
 
   constructor(options: ExportOptions) {
     this.options = options
     this.client = new ClickUpClient(options.token)
     this.logger = new Logger(options.verbose)
+    this.pageDelay = options.pageDelay ?? 100 // Default 100ms delay between page fetches
+  }
+
+  /**
+   * Delay helper to prevent API rate limiting
+   */
+  private delay(ms: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, ms))
   }
 
   /**
@@ -122,6 +131,9 @@ export class ClickUpExporter {
         this.logger.debug(`Could not fetch content for "${pageName}": ${error.message}`)
         this.errors.push(`Failed to fetch content for "${pageName}"`)
       }
+
+      // Rate limit delay to prevent API throttling on large docs
+      await this.delay(this.pageDelay)
 
       if (hasChildren) {
         // Page has children: create folder with index.md

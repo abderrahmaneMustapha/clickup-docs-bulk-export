@@ -57,6 +57,8 @@ export interface ExportOptions {
   outputDir: string
   docId?: string
   verbose?: boolean
+  /** Delay in ms between page content fetches to prevent API rate limiting (default: 100) */
+  pageDelay?: number
 }
 
 export interface ExportResult {
